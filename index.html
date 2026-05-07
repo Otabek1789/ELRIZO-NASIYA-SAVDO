@@ -1130,6 +1130,225 @@ body {
 .logo-sub {
   color: #8B2CF5 !important;
 }
+body.light-theme .logo:hover .logo-icon {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 28px rgba(99,3,152,0.45) !important;
+
+  background: linear-gradient(
+    135deg,
+    #630398 0%,
+    #8B2CF5 100%
+  ) !important;
+}
+body.light-theme .logo-icon {
+  box-shadow:
+    0 0 18px rgba(99,3,152,0.32) !important;
+}
+
+body.light-theme .logo:hover .logo-icon {
+  box-shadow:
+    0 0 30px rgba(99,3,152,0.48) !important;
+}
+body.light-theme .social-links a:hover {
+  color: #FFFFFF !important;
+}
+.hero {
+  background:
+    radial-gradient(
+      circle at 22% 50%,
+      rgba(139,44,245,0.12),
+      transparent 18%
+    ),
+
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(99,3,152,0.16),
+      transparent 20%
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(15,6,24,0) 0%,
+      #0F0618 12%,
+      #1B0B2C 45%,
+      #241038 50%,
+      #1B0B2C 55%,
+      #0F0618 88%,
+      rgba(15,6,24,0) 100%
+    ) !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: -40px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(139,44,245,0.18) 0%,
+      rgba(99,3,152,0.10) 35%,
+      transparent 75%
+    );
+
+  filter: blur(50px);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  background: none !important;
+  -webkit-text-fill-color: unset !important;
+  color: #C084FC !important;
+}
+
+.hero-content p {
+  color: #D7C3F5 !important;
+}
+
+.hero-img {
+  filter:
+    drop-shadow(0 0 24px rgba(139,44,245,0.28));
+
+  opacity: 0.96;
+}
+
+.logo-icon {
+  box-shadow:
+    0 0 18px rgba(99,3,152,0.32) !important;
+}
+
+.logo:hover .logo-icon {
+  box-shadow:
+    0 0 30px rgba(139,44,245,0.50) !important;
+
+  background: linear-gradient(
+    135deg,
+    #630398 0%,
+    #8B2CF5 100%
+  ) !important;
+}
+
+.social-links a:hover {
+  color: #FFFFFF !important;
+}
+
+.catalog-btn,
+.hero-btn,
+.add-cart-btn,
+.checkout-btn,
+.big-btn,
+.add-btn,
+.promo-text button {
+  background: linear-gradient(
+    135deg,
+    #630398 0%,
+    #8B2CF5 100%
+  ) !important;
+
+  color: #FFFFFF !important;
+
+  box-shadow:
+    0 8px 24px rgba(99,3,152,0.34),
+    0 0 20px rgba(139,44,245,0.24);
+}
+
+.catalog-btn:hover,
+.hero-btn:hover,
+.add-cart-btn:hover,
+.checkout-btn:hover,
+.big-btn:hover,
+.add-btn:hover,
+.promo-text button:hover {
+
+  background: linear-gradient(
+    135deg,
+    #8B2CF5 0%,
+    #630398 100%
+  ) !important;
+
+  box-shadow:
+    0 14px 34px rgba(99,3,152,0.44),
+    0 0 28px rgba(139,44,245,0.34);
+
+  color: #FFFFFF !important;
+}
+body:not(.light-theme) .promo-inner {
+  background:
+    radial-gradient(
+      circle at 82% 50%,
+      rgba(139,44,245,0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #14081F 0%,
+      #1D0D2B 50%,
+      #14081F 100%
+    ) !important;
+
+  border: 1px solid rgba(139,44,245,0.22) !important;
+  border-radius: 14px !important;
+  padding: 42px 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+  overflow: hidden !important;
+
+  box-shadow:
+    0 18px 45px rgba(99,3,152,0.18) !important;
+}
+
+body:not(.light-theme) .promo-text {
+  max-width: 520px !important;
+}
+
+body:not(.light-theme) .promo-text h3 {
+  color: #C084FC !important;
+  margin-bottom: 10px !important;
+}
+
+body:not(.light-theme) .promo-text p {
+  color: #E9D8FF !important;
+}
+
+body:not(.light-theme) .promo-emoji {
+  font-size: 72px !important;
+  margin-left: auto !important;
+  display: block !important;
+  filter: drop-shadow(0 0 24px rgba(139,44,245,0.28)) !important;
+}
+body:not(.light-theme) .action-btn:hover {
+  color: #FFFFFF !important;
+}
+
+body:not(.light-theme) .action-btn:hover i {
+  color: #FFFFFF !important;
+}
+body:not(.light-theme) .topbar-right a:hover,
+body:not(.light-theme) .topbar-left span:hover {
+  color: #FFFFFF !important;
+}
+
+body.light-theme .topbar-right a:hover,
+body.light-theme .topbar-left span:hover {
+  color: #24003A !important;
+}
 </style>
 </head>
 <body>
