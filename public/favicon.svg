@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="elrizoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A2BAE" />
+      <stop offset="50%" stop-color="#6C3EF4" />
+      <stop offset="100%" stop-color="#8F65FF" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9E00" />
+      <stop offset="100%" stop-color="#FF5500" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#2A1466" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="16" ry="16" fill="url(#elrizoGrad)" filter="url(#shadow)" />
+  <rect x="3" y="3" width="58" height="58" rx="15" ry="15" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+
+  <!-- Accent Shopping Tag Dot -->
+  <circle cx="50" cy="14" r="5" fill="url(#accentGrad)" stroke="#ffffff" stroke-width="1.5" />
+
+  <!-- Bold Modern 'E' Letter -->
+  <path
+    d="M21 17 H43 C44.6569 17 46 18.3431 46 20 C46 21.6569 44.6569 23 43 23 H28 V29 H39 C40.6569 29 42 30.3431 42 32 C42 33.6569 40.6569 35 39 35 H28 V41 H43 C44.6569 41 46 42.3431 46 44 C46 45.6569 44.6569 47 43 47 H21 C19.3431 47 18 45.6569 18 44 V20 C18 18.3431 19.3431 17 21 17 Z"
+    fill="#FFFFFF"
+  />
+</svg>
