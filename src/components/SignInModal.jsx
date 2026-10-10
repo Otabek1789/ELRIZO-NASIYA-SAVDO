@@ -23,27 +23,6 @@ export default function SignInModal({ open, onClose }) {
   const [verificationCode, setVerificationCode] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const [appPassInput, setAppPassInput] = useState('')
-  const [hasAppPassword, setHasAppPassword] = useState(() => {
-    try {
-      return !!localStorage.getItem('elrizo_gmail_app_password')
-    } catch (e) {
-      return false
-    }
-  })
-
-  const handleSaveAndSendGmail = async () => {
-    if (!appPassInput.trim()) {
-      setError("Iltimos, Google'dan olingan 16 ta harfli parolni kiriting")
-      return
-    }
-    try {
-      localStorage.setItem('elrizo_gmail_app_password', appPassInput.trim())
-      setHasAppPassword(true)
-      showToast("🔑 Ilova paroli saqlandi! Xat emailingizga yuborilmoqda...")
-      await requestLoginCode(email, password)
-    } catch (e) {}
-  }
 
   // Reset when modal opens/closes
   useEffect(() => {
@@ -322,106 +301,11 @@ export default function SignInModal({ open, onClose }) {
                   />
                 </div>
 
-                {/* Google App Password prompt if not yet configured */}
-                {!hasAppPassword && (
-                  <div
-                    style={{
-                      background: '#FFF9E6',
-                      border: '1px solid #FFE082',
-                      borderRadius: '10px',
-                      padding: '10px 14px',
-                      width: '100%',
-                      maxWidth: '380px',
-                      textAlign: 'left',
-                      marginBottom: '10px',
-                      fontSize: '11.5px',
-                      color: '#7C5E10',
-                    }}
-                  >
-                    <div style={{ fontWeight: 'bold', marginBottom: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span>⚠️ Google Ilova paroli kerak</span>
-                      <a
-                        href="https://myaccount.google.com/apppasswords"
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{ color: '#6C3EF4', fontWeight: 'bold', textDecoration: 'underline' }}
-                      >
-                        Parol olish ↗
-                      </a>
-                    </div>
-                    <p style={{ margin: '0 0 6px 0', lineHeight: '1.35', fontSize: '11px' }}>
-                      Gmail orqali xat kelishi uchun Google hisobingizdan 16 ta harfli Ilova parolini kiritishingiz kerak.
-                    </p>
-                    <div style={{ display: 'flex', gap: '6px' }}>
-                      <input
-                        type="password"
-                        placeholder="16 ta harfli parol"
-                        value={appPassInput}
-                        onChange={(e) => setAppPassInput(e.target.value)}
-                        style={{
-                          flex: 1,
-                          padding: '6px 8px',
-                          borderRadius: '6px',
-                          border: '1px solid #ccc',
-                          fontSize: '11px',
-                          outline: 'none',
-                        }}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleSaveAndSendGmail}
-                        style={{
-                          background: '#6C3EF4',
-                          color: '#fff',
-                          border: 'none',
-                          padding: '6px 10px',
-                          borderRadius: '6px',
-                          fontWeight: 'bold',
-                          cursor: 'pointer',
-                          fontSize: '11px',
-                          whiteSpace: 'nowrap',
-                        }}
-                      >
-                        Ulash & Jo'natish
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center', margin: '4px 0 10px 0' }}>
-                  <input
-                    type="submit"
-                    value="TASDIQLASH"
-                    className="auth-btn auth-solid"
-                    style={{ margin: 0 }}
-                  />
-
-                  {/* Development test bypass */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const lastCode = localStorage.getItem('elrizo_last_code')
-                      if (lastCode) {
-                        setVerificationCode(lastCode)
-                        showToast('⚡ Sinov kodi kiritildi: ' + lastCode)
-                      }
-                    }}
-                    style={{
-                      background: '#F0EBFF',
-                      border: '1.5px dashed #6C3EF4',
-                      color: '#4A2BAE',
-                      padding: '12px 14px',
-                      borderRadius: '49px',
-                      fontSize: '12px',
-                      fontWeight: '700',
-                      cursor: 'pointer',
-                      whiteSpace: 'nowrap',
-                    }}
-                    title="Ilova paroli hali ulanmagan bo'lsa, sinov kodini avtomatik kiritish"
-                  >
-                    ⚡ Test kodini kiritish
-                  </button>
-                </div>
+                <input
+                  type="submit"
+                  value="TASDIQLASH"
+                  className="auth-btn auth-solid"
+                />
 
                 <div
                   style={{
@@ -450,7 +334,7 @@ export default function SignInModal({ open, onClose }) {
                     type="button"
                     onClick={async () => {
                       await requestLoginCode(email, password)
-                      showToast('Kodni qayta yuborildi!')
+                      showToast('📧 Kod emailingizga qayta yuborildi!')
                     }}
                     style={{
                       background: 'none',
